@@ -32,6 +32,10 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -44,18 +48,15 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    // Hilt
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.core)
+
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.lifecycle.livedata.ktx)
+
+    implementation(libs.retrofit)
+    implementation(libs.gson.converter)
+
     implementation(libs.hilt.core)
     ksp(libs.hilt.compiler)
-
-    // Retrofit + Gson
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-
-    // OkHttp Logging
-    implementation(libs.okhttp.logging)
-
-    // Coroutines
-    implementation(libs.coroutines.core)
-    implementation(libs.coroutines.android)
 }
