@@ -13,9 +13,9 @@ ksp = "2.0.0-1.0.24"
 hilt = "2.50"
 retrofit = "2.9.0"
 gson = "2.10.1"
-okhttp = "4.12.0"
 coroutines = "1.7.3"
 lifecycle = "2.6.1"
+navigation_component = "2.8.9"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -43,9 +43,13 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 gson-converter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 
+#navigation Component
+navigation-fragment = { module = "androidx.navigation:navigation-fragment", version.ref = "navigation_component" }
+navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "navigation_component" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt"}
+hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 

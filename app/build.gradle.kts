@@ -33,7 +33,6 @@ android {
         jvmTarget = "11"
     }
     buildFeatures {
-        viewBinding = true
         dataBinding = true
     }
 }
@@ -59,4 +58,7 @@ dependencies {
 
     implementation(libs.hilt.core)
     ksp(libs.hilt.compiler)
+
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
 }
