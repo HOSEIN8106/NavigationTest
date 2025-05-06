@@ -1,4 +1,9 @@
 package com.example.navigationtest.domain.models
 
-data class Direction(val routePoints: List<LatLng>)
+import org.maplibre.geojson.Point
+
+data class Direction(
+    val points: List<Point> // لیستی از نقاط جغرافیایی
+)
+
 

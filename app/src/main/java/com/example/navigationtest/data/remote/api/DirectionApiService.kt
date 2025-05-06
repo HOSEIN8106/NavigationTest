@@ -1,16 +1,18 @@
 package com.example.navigationtest.data.remote.api
 
 import com.example.navigationtest.data.remote.dto.DirectionDto
-import com.example.navigationtest.data.remote.dto.DirectionRequestBody
-import retrofit2.http.Body
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface DirectionApiService {
-    @POST("v2/directions/driving-car")
+    @GET("v2/directions/driving-car")
     suspend fun getDirections(
-        @Header("Authorization") apiKey: String,
-        @Body body: DirectionRequestBody
+        @Query("start") origin: String,
+        @Query("end") destination: String,
+        @Query("api_key") apiKey: String = API_KEY
     ): DirectionDto
+
+    companion object {
+        const val API_KEY = "5b3ce3597851110001cf6248f63220a47a0c4faca61fe8afd2fa0629"
+    }
 }

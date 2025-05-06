@@ -55,10 +55,14 @@ dependencies {
 
     implementation(libs.retrofit)
     implementation(libs.gson.converter)
+    implementation(libs.okhttp)
 
     implementation(libs.hilt.core)
     ksp(libs.hilt.compiler)
 
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+
+    implementation(libs.maplibre.android)
+
 }

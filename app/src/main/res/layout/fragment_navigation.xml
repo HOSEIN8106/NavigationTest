@@ -1,23 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:maplibre="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.ui.NavigationFragment">
+        android:orientation="vertical">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
+        <org.maplibre.android.maps.MapView
+            android:id="@+id/mapView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@string/hello_blank_fragment" />
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
-    </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_origin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="59.593671, 36.271959"
+                android:hint="Origin (lat,lon)" />
+
+            <EditText
+                android:id="@+id/et_destination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="59.506355, 36.304568"
+                android:hint="Destination (lat,lon)" />
+
+            <Button
+                android:id="@+id/btn_get_route"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Get Route" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 </layout>
